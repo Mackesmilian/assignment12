@@ -21,7 +21,6 @@ class Bread {
         return breadId;
     }
 
-    //TODO: Modify the method
     public synchronized void bake(int breadId) {
         while (continueCondition) {
             try {
@@ -36,8 +35,7 @@ class Bread {
         continueCondition = true;
 
     }
-
-    //TODO: Modify the method
+    
     public synchronized void eat() {
         while (!continueCondition) {
             try {
