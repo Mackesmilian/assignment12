@@ -1,6 +1,11 @@
 /*
- * TODO: add Header
- * */
+ * UE12
+ * Baker.java
+ * Baker class implements runnable and uses Thread.wait() to simulate baking
+ * time.
+ * Author: Maximilian Wolf
+ * Last Change: 03.06.2020
+ */
 
 public class Baker implements Runnable {
     private Bread bread;

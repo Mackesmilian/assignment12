@@ -1,7 +1,11 @@
 /*
- * TODO: add Header
+ * UE12
+ * Bread.java
+ * Bread class which contains the bake() and eat() method and handles the thread
+ * operations, as in calling wait() and notifyAll().
+ * Author: Maximilian Wolf
+ * Last Change: 03.06.2020
  */
-
 class Bread {
     private int breadId = -1;
     private static boolean continueCondition = false;
