@@ -15,13 +15,22 @@ public class Baker implements Runnable {
 
     //TODO: Modify the method
     public void run() {
+        long start;
+        long finish;
+        long res;
         int breadNr = 0;
-        while (true) {
-            bread.bake(breadNr++);
-            try {
-                Thread.sleep(2000);
-            } catch (Exception e) {
-                e.printStackTrace();
+        synchronized (bread){
+            while (bread.getBreadId() < 5) {
+                bread.bake(breadNr++);
+                try {
+                    start = System.nanoTime();
+                    Thread.sleep(2000);
+                    finish = System.nanoTime();
+                    res = (finish - start) / 1000000;
+                    System.out.println(res);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

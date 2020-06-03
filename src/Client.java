@@ -15,12 +15,21 @@ public class Client implements Runnable {
 
     //TODO: Modify the method
     public void run() {
-        while (true) {
-            bread.eat();
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-                e.printStackTrace();
+        long start;
+        long finish;
+        long res;
+        synchronized (bread){
+            while (bread.getBreadId() < 5) {
+                bread.eat();
+                try {
+                    start = System.nanoTime();
+                    Thread.sleep(1000);
+                    finish = System.nanoTime();
+                    res = (finish - start) / 1000000;
+                    System.out.println(res);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
